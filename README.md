@@ -197,3 +197,15 @@ for user in existing_superusers:
         user.groups.add(superadmin_group)
         print(f"Added {user.username} to SuperAdmin group")
 ```
+
+
+### Dynamic permission class that works for all ViewSets by
+
+Inferring the model from the view.queryset or view.get_queryset()
+
+Mapping the DRF action → Django permission codename automatically
+
+```
+ permission_classes = [permissions.IsAuthenticated, DynamicModelPermission]
+
+```
